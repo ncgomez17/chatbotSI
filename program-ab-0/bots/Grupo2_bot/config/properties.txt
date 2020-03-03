@@ -1,0 +1,12 @@
+url:http://www.alicebot.org
+name:grupo2_bot
+email:ncgomez17@esei.uvigo.es
+gender:male
+age:20
+job:estudiante
+country:Spain
+city:Ourense
+botmaster:Nicolás Cid Gómez
+organization:ALICE AI Foundation
+version:0.0.4
+

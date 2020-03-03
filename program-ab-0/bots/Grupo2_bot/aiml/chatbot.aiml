@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <aiml version="2.0"> 
+ 
+<category>
+<pattern>*</pattern>
+<template>
+	<random>
+		<li>No entiendo lo que acabas de decir</li>
+		<li>Por favor, explícalo de otra manera</li>
+		<li>Podrías decirlo con otras palabras</li>
+	</random>
+</template>
+</category>
+
+<!--Saludos usamos datos del bot-->
+<category>
+	<pattern>^ Hola ^</pattern>
+	<template>Hola,mi nombre es <bot name="name"></bot>
+	</template>
+</category>
+<category>
+	<pattern>Buenos dias ^</pattern>
+	<template>Buenos dias,mi nombre es <bot name="name"/>
+	</template>
+</category>
+
+<!-- Informacion acerca del nombre de la persona-->
+<category>
+	<pattern>^ mi nombre es *</pattern>
+	<template>
+		<think>
+		<set name="nombre"><star index="2"/></set>
+		</think>
+			<get name="nombre"/>,me gusta tu nombre.
+	</template>
+</category>
+<category>
+	<pattern>Cual es mi nombre</pattern>
+	<template>
+		<condition name="nombre">
+			<li value="unknown">Aun no me has dicho como te llamas </li>
+			<li>Tu nombre es <get name="nombre"/></li>
+		</condition>
+	</template>
+</category>
+<!--Preguntas del anexo-->
+
+<!-- Pregunta 1 -->
+<category>
+<pattern>^ Hablame un poco sobre la Universidad de Vigo ^</pattern>
+<template>La Universidade de Vigo es una universidad pública, con autonomía académica, económica y de gobierno, que se sitúa al servicio de la sociedad bajo los principios de la igualdad, la solidaridad, la democracia y la libertad.Nuestros fines prioritarios son la consecución de las máximas cuotas de calidad de docencia e investigación, así como el fomento de la búsqueda de nuevos conocimientos y la transferencia de éstos a la sociedad, la creación artística y el desarrollo científico y tecnológico.
+</template>
+</category>
+
+<!--Pregunta 2-->
+<category>
+<pattern>^ Donde se encuentra la ESEI ^</pattern>
+<template>Se encuentra en el campus de Ourense, concretamente en el Edificio Politécnico.</template>
+</category>
+
+<!-- Pregunta 3 -->
+<category>
+<pattern>^ Que puedo estudiar en la ESEI ^</pattern>
+<template>Puedes estudiar el Grado en Ingenería Informática,Máster Universitario en Ingenería Informática o Estudios en Doctoramiento.</template>
+</category>
+
+
+<!-- Pregunta 4 -->
+<category>
+<pattern>^ Por que merece la pena estudiar en la ESEI ^</pattern>
+<template>Porque es una escuela profesional de las mejores a nivel Internacional,tendrás la ayuda del profesorado para cualquier duda que le pueda surgir en una materia,espacios de estudio,laboratorios para poder realizar las prácticas,etc...</template>
+</category>
+
+
+<!--Pregunta 5-->
+<category>
+<pattern>^ Hay una cafeteria en la ESEI ^</pattern>
+<template>Si,se encuentra en la planta 0,la podrás encontrar a la izquierda del salon de actos</template>
+</category>
+
+<!--Pregunta 6-->
+<category>
+<pattern>^ Donde se encuentra la Secretaría de la ESEI ^</pattern>
+<template>Está situada en la planta cero,la podrás encontrar a la izquierda de la entrada principal del edificio</template>
+</category>  
+
+<!-- Pregunta 7-->
+<category>
+<pattern>  ^ horario de atencion al publico de la secraria del centro ^ </pattern>
+<template> El horario de atención de la secretaría del centro es de lunes a viernes de 9:00 a 14:00 horas</template>
+</category>
+
+<!-- Pregunta 7_1 -->
+<category>
+<pattern> ^ horario ^ </pattern>
+<template>   Al horario de atencion al publico de la secretaria del centro te refieres ?  </template>
+</category>
+
+<!-- Pregunta 7_2 -->
+<category>
+<pattern> ^ si ^ </pattern>
+<that>   AL HORARIO DE ATENCION AL PUBLICO DE LA SECRETARIA DEL CENTRO TE REFIERES  </that>
+<template> <srai>  ^ horario de atencion al publico de la secraria del centro ^ </srai> </template>
+</category>
+
+<!-- Pregunta 7_3 -->
+<category>
+<pattern> ^ no ^ </pattern>
+<that>   AL HORARIO DE ATENCION AL PUBLICO DE LA SECRETARIA DEL CENTRO TE REFIERES  </that>
+<template> Pues no se decirte entonces, mira información en internet </template>
+</category>
+
+
+
+<!-- Pregunta 8 -->
+<category>
+<pattern> ^ PAT ^ </pattern>
+<template>El Plan de Accion Tutorial (PAT) se configura como un documento-marco que tiene como finalidad organizar, guiar y motivar la institucionalizacion y sistematizacion de las actividades de orientacion al estudiantado</template>
+</category>
+
+<!-- Pregunta 8_1 -->
+<category>
+<pattern> ^ Plan de Accion Tutorial ^ </pattern>
+<template><srai> ^ PAT ^ </srai> </template>
+</category>
+
+<!-- Pregunta 9 -->
+<category>
+<pattern> ^ protocolo de acogida de alumnos * </pattern>
+<template> Actualmente no existe un protocolo de acogida de alumnos con <star index="2"/> </template>
+</category>
+
+<!-- Pregunta 10 -->
+<category>
+<pattern> ^ delegacion de alumnos ^</pattern>
+<template>Sí,la ESEI cuenta con una delegación de alumnos donde cada dos años los alumnos eligen los nuevos representantes ante el gobierno de la <star index="2"/> y el gobierno de la universidad.</template>
+</category>
+
+<!-- Pregunta 11 -->
+<category>
+<pattern> ^ suplemento *</pattern>
+<template>El suplemento <star index="2"/> es el documento que otorga validez comunitaria al currículum académico.</template>
+</category>
+
+
+<!-- Pregunta 11_1 -->
+<category>
+<pattern> ^ suplemento </pattern>
+<template>El suplemento europeo dices?</template>
+</category>
+
+<!-- Pregunta 11_2 -->
+<category>
+<pattern> ^ si ^ </pattern>
+<that> EL SUPLEMENTO EUROPEO DICES </that>
+<template><srai>  ^ suplemento * </srai></template>
+</category>
+
+<!-- Pregunta 12 -->
+<category>
+<pattern> ^ practicas ^</pattern>
+<template>En la ESEI se pueden hacer practicas curriculares o extracurriculares</template>
+</category>
+
+<!-- Regla 13 -->
+<category>
+<pattern>^ Donde puedo consultar la oferta de practicas en empresas ^</pattern>
+<template>En la pagina de la ESEI</template>
+</category>
+
+<!-- Regla 14 -->
+<category>
+<pattern>^ Con que recursos materiales y servicios cuenta la ESEI ^</pattern>
+<template>Aulas,talleres y salas de estudio,laboratorios y equipamiento,
+puestos de lectura en la biblioteca y infraestructura de TIC</template>
+</category>
+
+<!-- Regla 15 -->
+<category>
+<pattern>^ Que son los Trabajos Fin de Grado o de Master ^</pattern>
+<template>Es un trabajo obligatorio en el que se ponen de manifiesto los conocimientos,
+habilidades, aptitudes y actitudes adquiridos por el estudiante a lo largo de la titulacion</template>
+</category>
+
+<!-- Regla 16 -->
+<category>
+<pattern>^ Como hago para acceder a la Biblioteca ^</pattern>
+<template>Te refieres a como acceder fisicamente o a la pagina web ?</template>
+</category>
+
+<!-- Regla 16_1 -->
+<category>
+<pattern>^ fisicamente ^</pattern>
+<that>TE REFIERES A COMO ACCEDER FISICAMENTE O A LA PAGINA WEB</that>
+<template>Tienes que ir al campus sur al lado de la piscina universitaria</template>
+</category>
+
+<!-- Regla 16_2 -->
+<category>
+<pattern>^ pagina web ^</pattern>
+<that>TE REFIERES A COMO ACCEDER FISICAMENTE O A LA PAGINA WEB</that>
+<template>Desde la pagina de la ESEI</template>
+</category>
+
+<!-- Regla 17 -->
+<category>
+<pattern>^ Como puedo justificar mi asistencia a las actividades de evaluacion y a sus revisiones ^</pattern>
+<template>Matriculandote en la asignatura correspondiente</template>
+</category>
+
+<!-- Regla 18 -->
+<category>
+<pattern>^ Que actividades deportivas ofrece la ESEI ^</pattern>
+<template>Actividades dirigidas,escuelas deportivas,rutas culturales,
+campeonatos y deporte federado</template>
+</category>
+
+
+</aiml>
