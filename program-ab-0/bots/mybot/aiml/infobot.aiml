@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <aiml version="2.0"> 
+  	<!--Respuesta a cualquier patrón que no entienda del bot--> 
+<category>
+<pattern>*</pattern>
+<template>
+	<random>
+		<li>No entiendo lo que acabas de decir</li>
+		<li>Por favor, explícalo de otra manera</li>
+		<li>Podrías decirlo con otras palabras</li>
+	</random>
+</template>
+</category>
+
+<!--Saludos usamos datos del bot-->
+<category>
+	<pattern>^ Hola ^</pattern>
+	<template>Hola,mi nombre es <bot name="name"></bot>
+	</template>
+</category>
+<category>
+	<pattern>Buenos dias ^</pattern>
+	<template><srai>^ Hola ^</srai>
+	</template>
+</category>
+<category>
+	<pattern> ^ Buenas ^</pattern>
+	<template><srai>^ Hola ^</srai>
+	</template>
+	
+</category>
+<category>
+	<pattern> ^ gracias ^</pattern>
+	<template>de nada.
+	</template>
+</category>
+<!--INORMACIÓN GENERAL DEL BOT-->
+<!--Información del nombre -->
+<category>
+	<pattern>^ Cual es tu nombre ^</pattern>
+	<template>Mi nombre es <bot name="name"></bot>
+</template>
+</category>
+<category>
+	<pattern>* tu nombre ^</pattern>
+	<template><srai>^ Cual es tu nombre ^</srai>
+</template>
+</category>
+<category>
+	<pattern>^ Como * llamas ^</pattern>
+	<template><srai>^ Cual es tu nombre ^</srai>
+</template>
+</category>
+<!--Información de donde vive -->
+<category>
+	<pattern>^ Donde vives ^</pattern>
+	<template>Vivo en  <bot name="address"></bot>
+</template>
+</category>
+<category>
+	<pattern>* lugar ^ vives ^</pattern>
+	<template><srai>^ Donde vives ^</srai>
+</template>
+</category>
+<category>
+	<pattern>^ Donde ^ eres ^</pattern>
+	<template><srai>^ Donde vives ^</srai>
+</template>
+</category>
+<!--Informacion de la edad -->
+<category>
+	<pattern>^ Cuantos años tienes ^</pattern>
+	<template> Tengo <bot name="age"></bot> años</template>
+</category>
+<category>
+<pattern>^ tu edad ^</pattern>
+<template><srai>^ Cuantos años tienes ^</srai></template>
+</category>
+<category>
+	<pattern>* años tienes ^</pattern>
+	<template><srai>^ Cuantos años tienes ^</srai></template>
+</category>
+<category>
+	<pattern>* tus años ^</pattern>
+	<template><srai>^ Cuantos años tienes ^</srai></template>
+</category>
+<!--Informacion de los creadores-->
+<category>
+	<pattern>^ Quienes son tus creadores ^</pattern>
+	<template> Mis creadores son Sergio,Iago y Nico</template>
+</category>
+<category>
+	<pattern>^Quienes * creadores ^</pattern>
+	<template><srai>^ Quienes son tus creadores ^</srai></template>
+</category>
+<category>
+	<pattern>* te creo ^</pattern>
+	<template><srai>^ Quienes son tus creadores ^</srai></template>
+</category>
+<category>
+	<pattern>* te crearon ^</pattern>
+	<template><srai>^ Quienes son tus creadores ^</srai></template>
+</category>
+<!--Correo del bot -->
+<category>
+	<pattern>^ Dame un correo para contactar con tus creadores ^</pattern>
+	<template>Vale aqui lo tienes <bot name="email"></bot></template>
+</category>
+<category>
+	<pattern>^ Dame * correo ^</pattern>
+	<template><srai>^ Dame un correo para contactar con tus creadores ^</srai></template>
+</category>
+<category>
+	<pattern>^ tienes ^ correo ^</pattern>
+	<template><srai>^ Dame un correo para contactar con tus creadores ^</srai></template>
+</category>
+<!--A que se dedica el bot -->
+<category>
+	<pattern>^ A que te dedicas ^</pattern>
+	<template>Soy <bot name="job"></bot></template>
+</category>
+<category>
+	<pattern>^Que haces^</pattern>
+	<template><srai>^ A que te dedicas ^</srai></template>
+</category>
+<category>
+	<pattern>^ Eres estudiante ^</pattern>
+	<template>Si soy <bot name="job"></bot></template>
+</category>
+<category>
+	<pattern>^ Eres * ^</pattern>
+	<template>No, yo no soy eso</template>
+</category>
+
+</aiml>

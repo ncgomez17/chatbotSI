@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <aiml version="2.0"> 
+<!--Respuesta a cualquier patrón que no entienda del bot--> 
+<category>
+<pattern>*</pattern>
+<template>
+	<random>
+		<li>No entiendo lo que acabas de decir</li>
+		<li>Por favor, explícalo de otra manera</li>
+		<li>Podrías decirlo con otras palabras</li>
+	</random>
+</template>
+</category>
+
+<!--Saludos usamos datos del bot-->
+<category>
+	<pattern>^ Hola ^</pattern>
+	<template>Hola,mi nombre es <bot name="name"></bot>
+	</template>
+</category>
+<category>
+	<pattern>Buenos dias ^</pattern>
+	<template><srai>^ Hola ^</srai>
+	</template>
+</category>
+<category>
+	<pattern> ^ Buenas ^</pattern>
+	<template><srai>^ Hola ^</srai>
+	</template>
+	
+</category>
+<category>
+	<pattern> ^ gracias ^</pattern>
+	<template>de nada.
+	</template>
+</category>
+
+<!--INFORMACIÓN SOBRE LA PERSONA CON LA QUE ESTAMOS HABLANDO -->
+<!-- Informacion acerca del nombre de la persona-->
+<!-- Ponemos ^despues del * para que al coger el valor solo coga una palabra y no varias -->
+<category>
+	<pattern>^ mi nombre es * ^</pattern>
+	<template>
+		<think>
+		<set name="nombre"><star index="2"/></set>
+		</think>
+			<get name="nombre"/>,me gusta tu nombre.
+	</template>
+</category>
+<category>
+	<pattern>^ me llamo * ^</pattern>
+	<template>
+		<think>
+		<set name="nombre"><star index="2"/></set>
+		</think>
+			<get name="nombre"/>,me gusta tu nombre.
+	</template>
+</category>
+<category>
+	<pattern>Cual ^ es mi nombre ^</pattern>
+	<template>
+		<condition name="nombre">
+			<li value="unknown">Aun no me has dicho como te llamas </li>
+			<li>Tu nombre es <get name="nombre"/></li>
+		</condition>
+	</template>
+</category>
+<category>
+<pattern>^ Como me llamo ^</pattern>
+<template><srai>Cual ^ es mi nombre ^</srai></template>
+</category>
+<category>
+<pattern>^ dime mi nombre ^</pattern>
+<template><srai>Cual ^ es mi nombre ^</srai></template>
+</category>
+<!--Informacion sobre la edad de la persona -->
+<category>
+	<pattern>^ tengo * años ^</pattern>
+	<template>
+		<think>
+		<set name="años"><star index="2"/></set>
+		</think>
+			<get name="años"/>,me gusta tu nombre.
+	</template>
+</category>
+<category>
+	<pattern>^ mi edad es * ^</pattern>
+	<template>
+		<srai>^ tengo * años ^</srai>
+	</template>
+</category>
+<category>
+	<pattern>Cual ^ mi edad ^</pattern>
+	<template>
+		<condition name="años">
+			<li value="unknown">Aun no me has dicho cuantos años tienes</li>
+			<li>Tu edad es de <get name="años"/></li>
+		</condition>
+	</template>
+</category>
+<category>
+<pattern>^Cuantos años tengo ^</pattern>
+<template><srai>Cual ^ mi edad ^</srai></template>
+</category>
+<category>
+<pattern>^ edad tengo ^</pattern>
+<template><srai>Cual ^ es mi nombre ^</srai></template>
+</category>
+<!--Información acerca de donde vive la persona -->
+<category>
+	<pattern>^ vivo en * ^</pattern>
+	<template>
+		<think>
+		<set name="ciudad"><star index="2"/></set>
+		</think>
+			mmm asi que vives en <get name="ciudad"/>.
+	</template>
+</category>
+<category>
+	<pattern>^ mi ciudad es * ^</pattern>
+	<template>
+		<think>
+		<set name="ciudad"><star index="2"/></set>
+		</think>
+			mmm asi que vives en <get name="ciudad"/>.
+	</template>
+</category>
+<category>
+	<pattern>^ Donde vivo ^</pattern>
+	<template>
+		<condition name="ciudad">
+			<li value="unknown">No me dijiste donde vivias </li>
+			<li>Vives en <get name="ciudad"/></li>
+		</condition>
+	</template>
+</category>
+<category>
+<pattern>^ dime mi ciudad ^</pattern>
+<template><srai>^ Donde vivo ^</srai></template>
+</category>
+
+<!--Guardaremos un gusto cualquiera de la persona -->
+<category>
+	<pattern> ^ Me gusta * </pattern>
+	<template>	
+		<think>
+		<set name="gusto"><star index="2"/></set>
+		</think>
+		Es interesante que te guste <get name="gusto"/>
+</template>
+</category>
+<category>
+	<pattern>^ Dime * gusta ^</pattern>
+	<template>
+		<condition name="gusto">
+			<li value="unknown">Nose lo que te gusta porque no me dijiste nada</li>
+			<li>Te gusta <get name="gusto"/></li>
+		</condition>
+	</template>
+</category>
+<category>
+	<pattern>^ Que * gusta</pattern>
+	<template><srai>^ Dime * gusta ^</srai></template>
+</category>
+<!--Dedicacion de la persona -->
+<category>
+	<pattern>^ dedico a *</pattern>
+	<template><think>
+		<set name='job'><star index="2"></star></set>
+	</think>
+	Que interesante
+</template>
+</category>
+<category>
+	<pattern>^ trabajo es *</pattern>
+	<template><srai>^ dedico a *</srai>
+</template>
+</category>
+<category>
+	<pattern>^ que me dedico</pattern>
+	<template>
+		<condition name="job">
+			<li value="unknown">Nose que trabajo tienes porque no me dijiste nada</li>
+			<li>Te gusta <get name="job"/></li>
+		</condition>
+	</template>
+</category>
+<category>
+	<pattern>^ que trabajo tengo ^</pattern>
+	<template><srai>^ que me dedico</srai>
+</template>
+</category>
+<category>
+	<pattern>^ que trabajo ^</pattern>
+	<template><srai>^ que me dedico</srai>
+</template>
+</category>
+
+</aiml>

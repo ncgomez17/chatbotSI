@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <aiml version="2.0"> 
+
+<!--Preguntas del anexo-->
+
+<!-- Pregunta 1 -->
+<category>
+<pattern>^ Hablame un poco sobre la <set>uvigo</set> ^</pattern>
+<template>La Universidade de Vigo es una universidad pública, con autonomía académica, económica y de gobierno, que se sitúa al servicio de la sociedad bajo los principios de la igualdad, la solidaridad, la democracia y la libertad.Nuestros fines prioritarios son la consecución de las máximas cuotas de calidad de docencia e investigación, así como el fomento de la búsqueda de nuevos conocimientos y la transferencia de éstos a la sociedad, la creación artística y el desarrollo científico y tecnológico.
+</template>
+</category>
+
+<!--Pregunta 1_0 comprueba que no esté en el set-->
+<category>
+<pattern> ^ Hablame ^ sobre la *</pattern>
+<template>No se que hablarte de la <star index="3"/>. </template>
+</category>
+
+<!-- Pregunta 1_1 -->
+<category>
+<pattern>^ Que es la <set>uvigo</set> ^</pattern>
+<template> <srai>^ Hablame un poco sobre la <set>uvigo</set> ^</srai>
+</template>
+</category>
+
+<!--Pregunta 1_1_0 comprueba que no esté en el set-->
+<category>
+<pattern>^ Que es la *</pattern>
+<template>No se que es la <star index="2"/>. </template>
+</category>
+
+<!-- Pregunta 1_3 -->
+<category>
+<pattern> ^ <set>uvigo</set> ^</pattern>
+<template> Quieres saber informacion sobre la uvigo, te refieres a eso?
+</template>
+</category>
+
+<!-- Pregunta 1_4 -->
+<category>
+<pattern> ^ si ^</pattern>
+<that> QUIERES SABER INFORMACION SOBRE LA UVIGO, TE REFIERES A ESO</that>
+<template><srai>^ Hablame un poco sobre la <set>uvigo</set> ^</srai>
+</template>
+</category>
+
+<!-- Pregunta 1_5 -->
+<category>
+<pattern>  ^ no ^</pattern>
+<that> QUIERES SABER INFORMACION SOBRE LA UVIGO, TE REFIERES A ESO </that>
+<template> Pues entonces nose decirte.
+</template>
+</category>
+
+
+<!--Pregunta 2-->
+<category>
+<pattern>^ Donde se encuentra la <set>esei</set> ^</pattern>
+<template>Se encuentra en el campus de Ourense, concretamente en el Edificio Politécnico.
+</template>
+</category>
+
+<!--Pregunta 2_0 comprueba que no esté en el set-->
+<category>
+<pattern>^ Donde se encuentra la *</pattern>
+<template>Nose donde se encuentra la <star index="2"/>. </template>
+</category>
+
+<!-- Pregunta 2_1 -->
+<category>
+<pattern> * lugar * <set>esei</set> ^</pattern>
+<template> <srai>^ Donde se encuentra la <set>esei</set> ^</srai>
+</template>
+</category>
+
+<!-- Pregunta 2_2 -->
+<category>
+<pattern> ^ Donde * <set>esei</set> ^</pattern>
+<template> <srai>^ Donde se encuentra la <set>esei</set> ^</srai>
+</template>
+</category>
+
+<!-- Pregunta 3 -->
+<category>
+<pattern>^ Que puedo estudiar en la <set>esei</set> ^</pattern>
+<template>Puedes estudiar el Grado en Ingenería Informática,Máster Universitario en Ingenería Informática o Estudios en Doctoramiento.</template>
+</category>
+
+<!--Pregunta 3_0 comprueba que no esté en el set-->
+<category>
+<pattern>^ Que puedo estudiar en la *</pattern>
+<template>Nose que puedes estudiar en la <star index="2"/>.</template>
+</category> 
+
+<!-- Pregunta 3_1 -->
+<category>
+<pattern>  ^ hacer * <set>esei</set> ^</pattern>
+<template><srai> ^ Que puedo estudiar en la <set>esei</set> ^</srai></template>
+</category>
+
+
+<!-- Pregunta 4 -->
+<category>
+<pattern>^ Por que merece la pena estudiar en la <set>esei</set> ^</pattern>
+<template>Porque es una escuela profesional de las mejores a nivel Internacional,tendrás la ayuda del profesorado para cualquier duda que le pueda surgir en una materia,espacios de estudio,laboratorios para poder realizar las prácticas,etc...</template>
+</category>
+
+<!--Pregunta 4_0 comprueba que no esté en el set-->
+<category>
+<pattern>^ Por que merece la pena estudiar en la *</pattern>
+<template>Nose si merece la pena estudiar en la <star index="2"/> </template>
+</category> 
+
+
+<!-- Pregunta 4_1 -->
+<category>
+<pattern>  ^ me recomiendas estudiar * <set>esei</set> ^</pattern>
+<template> Sí yo estoy en tercer año, y si te lo recomiendo.</template>
+</category>
+
+
+<!--Pregunta 5-->
+<category>
+<pattern>^ Hay una cafeteria en la <set>esei</set> ^</pattern>
+<template>Si, se encuentra en la planta 0, la podras encontrar a la izquierda del salon de actos, te gusta el cafe?</template>
+</category>
+
+
+<!--Pregunta 5_0 comprueba que no esté en el set-->
+<category>
+<pattern> ^ Hay una cafeteria en la *</pattern>
+<template>Nose si hay una cafeteria en la <star index="2"/> </template>
+</category> 
+
+<!-- Pregunta 5_1-->
+<category>
+<pattern>  ^ si ^</pattern>
+<that>Si, se encuentra en la planta 0, la podras encontrar a la izquierda del salon de actos, te gusta el cafe</that>
+<template> Que guay a mí tambiém me encanta el café. </template>
+</category>
+
+<!-- Pregunta 5_2-->
+<category>
+<pattern>  ^ no ^</pattern>
+<that>Si, se encuentra en la planta 0, la podras encontrar a la izquierda del salon de actos, te gusta el cafe</that>
+<template> Bu, pues a mí si me gusta el café. </template>
+</category>
+
+<!-- Pregunta 5_3-->
+<category>
+<pattern>  ^ cafeteria ^</pattern>
+<template> La cafeteria de la esei dices?</template>
+</category>
+
+
+<!-- Pregunta 5_4-->
+<category>
+<pattern>  ^ si ^</pattern>
+<that>La cafeteria de la esei dices</that>
+<template><srai>^ Hay una cafeteria en la <set>esei</set> ^ </srai></template>
+</category>
+
+<!-- Pregunta 5_5-->
+<category>
+<pattern>  ^ no ^</pattern>
+<that>La cafeteria de la esei dices</that>
+<template> Pues no tengo ni idea entonces.</template>
+</category>
+
+<!--Pregunta 6-->
+<category>
+<pattern>^ Donde se encuentra la Secretaria de la <set>esei</set> ^</pattern>
+<template>Está situada en la planta cero,la podrás encontrar a la izquierda de la entrada principal del edificio</template>
+</category>  
+
+
+<!--Pregunta 6_0 comprueba que no esté en el set-->
+<category>
+<pattern>^ Donde se encuentra la Secretaria de la *</pattern>
+<template>Nose donde se encuentra la Secretaria de la <star index="2"/> </template>
+</category> 
+
+<!-- Pregunta 6_1 -->
+<category>
+<pattern> ^ Donde * Secretaria ^</pattern>
+<template> <srai>^ Donde se encuentra la Secretaria de la <set>esei</set> ^</srai>
+</template>
+</category>
+
+<!-- Pregunta 7-->
+<category>
+<pattern>  ^ Que horario de atencion al publico tiene la secretaria del centro ^ </pattern>
+<template> El horario de atención de la secretaría del centro es de lunes a viernes de 9:00 a 14:00 horas</template>
+</category>
+
+<!-- Pregunta 7_1 -->
+<category>
+<pattern> ^ horario ^ </pattern>
+<template>   Al horario de atencion al publico de la secretaria del centro te refieres ?  </template>
+</category>
+
+<!-- Pregunta 7_2 -->
+<category>
+<pattern> ^ si ^ </pattern>
+<that>   AL HORARIO DE ATENCION AL PUBLICO DE LA SECRETARIA DEL CENTRO TE REFIERES  </that>
+<template> <srai> ^ Que horario de atencion al publico tiene la secretaria del centro ^ </srai> </template>
+</category>
+
+<!-- Pregunta 7_3 -->
+<category>
+<pattern> ^ no ^ </pattern>
+<that>   AL HORARIO DE ATENCION AL PUBLICO DE LA SECRETARIA DEL CENTRO TE REFIERES  </that>
+<template> Pues no se decirte entonces, mira información en internet </template>
+</category>
+
+
+
+<!-- Pregunta 8 -->
+<category>
+<pattern> ^ En que consiste el PAT ^ </pattern>
+<template>El Plan de Accion Tutorial (PAT) se configura como un documento-marco que tiene como finalidad organizar, guiar y motivar la institucionalizacion y sistematizacion de las actividades de orientacion al estudiantado</template>
+</category>
+
+<!-- Pregunta 8_0 -->
+<category>
+<pattern> ^ En que consiste el * </pattern>
+<template>No se en que consiste el <star index="2"/>.</template>
+</category>
+
+<!-- Pregunta 8_1 -->
+<category>
+<pattern> ^ PAT ^ </pattern>
+<template><srai> ^ En que consiste el PAT ^ </srai></template>
+</category>
+
+<!-- Pregunta 8_2 -->
+<category>
+<pattern> ^ Plan de Accion Tutorial ^ </pattern>
+<template><srai>^ En que consiste el PAT ^ </srai> </template>
+</category>
+
+<!-- Pregunta 9 -->
+<category>
+<pattern> ^ Cual es el protocolo de acogida de alumnos con necesidades educativas especiales ^ </pattern>
+<template> De la ESEI dices? </template>
+</category>
+
+<!-- Pregunta 9_0 -->
+<category>
+<pattern> ^ Cual es el protocolo de acogida de alumnos *</pattern>
+<template>No tengo ni idea de cual es el protocolo de acogida de alumnos <star index="2"/>. </template>
+</category>
+
+
+<!-- Pregunta 9_1 -->
+<category>
+<pattern> ^ si ^ </pattern>
+<that> De la ESEI dices </that>
+<template> Actualmente no existe un protocolo de acogida de alumnos con necesidades educativas especiales, estamos en ello.</template>
+</category>
+
+
+<!-- Pregunta 9_2-->
+<category>
+<pattern> ^ no ^ </pattern>
+<that> De la ESEI dices </that>
+<template>Entonces no se, sobre otros protocolos puedes informarte en internet </template>
+</category>
+
+<!-- Pregunta 9_3 -->
+<category>
+<pattern> ^ protocolo ^ </pattern>
+<template> te refieres al protocolo de acogida de alumnos con necesidades educativas especiales de la ESEI?  </template>
+</category>
+
+<!-- Pregunta 9_4-->
+<category>
+<pattern> ^ si ^ </pattern>
+<that>te refieres al protocolo de acogida de alumnos con necesidades educativas especiales de la ESEI</that>
+<template>Actualmente no existe un protocolo de acogida de alumnos con necesidades educativas especiales, estamos en ello</template>
+</category>
+
+<!-- Pregunta 9_5 -->
+<category>
+<pattern> ^ no ^ </pattern>
+<that>te refieres al protocolo de acogida de alumnos con necesidades educativas especiales de la ESEI</that>
+<template>Entonces no se, sobre otros procolos puedes informarte en internet</template>
+</category>
+
+<!-- Pregunta 10 -->
+<category>
+<pattern> ^ Existe una delegacion de alumnos en la <set>esei</set> ^</pattern>
+<template>Sí,la ESEI cuenta con una delegación de alumnos donde cada dos años los alumnos eligen los nuevos representantes ante el gobierno de la ESEI y el gobierno de la universidad.</template>
+</category>
+
+<!-- Pregunta 10_0 si no está en el set -->
+<category>
+<pattern>^ Existe una delegacion de alumnos en la *</pattern>
+<template>No se si existe una delegacion de alumnos en la <star index="2"/>. </template>
+</category>
+
+<!-- Pregunta 10_1 -->
+<category>
+<pattern> Hay * delegacion de alumnos * <set>esei</set> ^</pattern>
+<template><srai>^ Existe una delegacion de alumnos en la <set>esei</set> ^</srai></template>
+</category>
+
+<!-- Pregunta 10_2 -->
+<category>
+<pattern> Teneis ^ delegacion de alumnos * <set>esei</set> ^</pattern>
+<template><srai>^ Existe una delegacion de alumnos en la <set>esei</set> ^</srai></template>
+</category>
+
+
+<!-- Pregunta 11 -->
+<category>
+<pattern> ^ Que es el suplemento europeo al titulo ^ </pattern>
+<template>El suplemento europeo al titululo es el documento que otorga validez comunitaria al currículum académico.</template>
+</category>
+
+<!-- Pregunta 11_0 si no es el europeo al titulo ejemplo americano al titulo -->
+<category>
+<pattern>^ Que es el suplemento * al titulo</pattern>
+<template>No se que es el suplemento <star index="2"/> al titulo. </template>
+</category>
+
+
+<!-- Pregunta 11_1 -->
+<category>
+<pattern> ^ suplemento ^</pattern>
+<template>El suplemento europeo al titulo dices?</template>
+</category>
+
+<!-- Pregunta 11_2 -->
+<category>
+<pattern> ^ si ^ </pattern>
+<that> EL SUPLEMENTO EUROPEO AL TITULO DICES </that>
+<template><srai> ^ Que es el suplemento europeo al titulo ^ </srai></template>
+</category>
+
+<!-- Pregunta 11_3 -->
+<category>
+<pattern> ^ no ^ </pattern>
+<that> EL SUPLEMENTO EUROPEO AL TITULO DICES </that>
+<template>Entonces no se nada sobre ese suplemento</template>
+</category>
+
+<!-- Pregunta 12 -->
+<category>
+<pattern> ^ Que tipo de practicas puedo realizar como alumno de la <set>esei</set> ^</pattern>
+<template>En la ESEI se pueden hacer practicas curriculares o extracurriculares</template>
+</category>
+
+<!-- Pregunta 12_0 si no está en el set -->
+<category>
+<pattern> ^ Que tipo de practicas puedo realizar como alumno de la *</pattern>
+<template>No se nada de las practicas que puedes realizar como alumno de la <star index="2"/>.</template>
+</category>
+
+<!-- Pregunta 12_1 otra forma Que practicas puedo hacer como alumno... -->
+<category>
+<pattern> ^ practicas * alumno de la <set>esei</set></pattern>
+<template><srai>^ Que tipo de practicas puedo realizar como alumno de la <set>esei</set> ^ </srai></template>
+</category>
+<!-- Pregunta 12_2 -->
+<category>
+<pattern> ^ practicas * alumno de la *</pattern>
+<template>No se nada de las practicas de la <star index="3"/>.</template>
+</category>
+
+
+<!-- Regla 13 -->
+<category>
+<pattern>^ Donde puedo consultar la oferta de practicas en empresas ^</pattern>
+<template>Ofertas de la ESEI preguntas?</template>
+</category>
+
+<!-- Regla 13 otra forma de preguntar que ofertas hay de practicas en empresas -->
+<category>
+<pattern> ^ ofertas * practicas en empresas ^</pattern>
+<template><srai> ^ Donde puedo consultar la oferta de practicas en empresas ^ </srai></template>
+</category>
+
+<!-- Regla 13_1 respuesta si -->
+<category>
+<pattern>^ si ^</pattern>
+<that>OFERTAS DE LA ESEI PREGUNTAS</that>
+<template>Puedes consultar información de ofertas de practicas en la pagina de la ESEI:
+		<url> https://esei.uvigo.es/docencia/ofertas-de-practicas/ </url>
+</template>
+</category>
+
+<!-- Regla 13_1 respuesta no -->
+<category>
+<pattern>^ no ^</pattern>
+<that>OFERTAS DE LA ESEI PREGUNTAS</that>
+<template>Ah entonces nada, solo se de las ofertas de la ESEI.
+</template>
+</category>
+
+<!-- Regla 13_1 no la coje por la pregunta 12 -->
+<category>
+<pattern>* practicas * empresas *</pattern>
+<template>En la pagina de la ESEI</template>
+</category>
+
+<!-- Regla 14 -->
+<category>
+<pattern>^ Con que recursos materiales y servicios cuenta la <set>esei</set> ^</pattern>
+<template>La ESEI cuenta con: Aulas,talleres y salas de estudio,laboratorios y equipamiento,
+puestos de lectura en la biblioteca y infraestructura de TIC</template>
+</category>
+
+<!-- Regla 14_0 si no está en el set -->
+<category>
+<pattern>^ Con que recursos materiales y servicios cuenta la *</pattern>
+<template> No se con que recursos materiales y servicios cuenta la <star index="2"/>.</template>
+</category>
+
+<!-- Regla 14_1-->
+<category>
+<pattern>* recursos ^ <set>esei</set> ^</pattern>
+<template>Sus recursos son aulas,talleres y salas de estudio,laboratorios y equipamiento informático,
+puestos de lectura en la biblioteca y infraestructura de TIC</template>
+</category>
+
+<!-- Regla 14_2  -->
+<category>
+<pattern>* servicios ^ <set>esei</set> ^</pattern>
+<template>Sus servicios son aulas,talleres y salas de estudio,laboratorios y equipamiento informático,
+puestos de lectura en la biblioteca y infraestructura de TIC</template>
+</category>
+
+<!-- Regla 15 -->
+<category>
+<pattern>^ Que son los Trabajos Fin de Grado o de Master ^</pattern>
+<template>Son trabajos obligatorios en los que se ponen de manifiesto los conocimientos,
+habilidades, aptitudes y actitudes adquiridos por el estudiante a lo largo de la titulacion</template>
+</category>
+
+<!-- Regla 15_1 -->
+<category>
+<pattern>* Trabajos Fin de Grado ^</pattern>
+<template><srai>^ Que son los Trabajos Fin de Grado o de Master ^</srai></template>
+</category>
+
+<!-- Regla 15_2 -->
+<category>
+<pattern>* Master ^</pattern>
+<template><srai>^ Que son los Trabajos Fin de Grado o de Master ^</srai></template>
+</category>
+
+<!-- Regla 15_3 singular-->
+<category>
+<pattern>* Trabajo Fin de Grado ^</pattern>
+<template><srai>^ Que son los Trabajos Fin de Grado o de Master ^</srai></template>
+</category>
+
+<!-- Regla 15_4  tfg -->
+<category>
+<pattern>* TFG ^</pattern>
+<template><srai>^ Que son los Trabajos Fin de Grado o de Master ^</srai></template>
+</category>
+
+<!-- Regla 15_5  tfm -->
+<category>
+<pattern>* TFM ^</pattern>
+<template><srai>^ Que son los Trabajos Fin de Grado o de Master ^</srai></template>
+</category>
+
+
+<!-- Regla 16 -->
+<category>
+<pattern>^ Como hago para acceder a la Biblioteca ^</pattern>
+<template>Te refieres a como acceder fisicamente o a la pagina web ?</template>
+</category>
+
+<!-- Regla 16_1 -->
+<category>
+<pattern>^ fisicamente ^</pattern>
+<that>TE REFIERES A COMO ACCEDER FISICAMENTE O A LA PAGINA WEB</that>
+<template>Tienes que ir al campus sur al lado de la piscina universitaria</template>
+</category>
+
+<!-- Regla 16_2 -->
+<category>
+<pattern>^ web ^</pattern>
+<that>TE REFIERES A COMO ACCEDER FISICAMENTE O A LA PAGINA WEB</that>
+<template>Desde la pagina de la:
+<url>http://www.perseo.biblioteca.uvigo.es/search*spi</url>
+</template>
+</category>
+
+
+<!-- Regla 16_3 -->
+<category>
+<pattern>* Biblioteca ^</pattern>
+<template>Te refieres a como acceder fisicamente o a la pagina web ?</template>
+</category>
+
+<!-- Regla 17 -->
+<category>
+<pattern>^ Como puedo justificar mi asistencia a las actividades de evaluacion y a sus revisiones ^</pattern>
+<template>Matriculandote en la asignatura correspondiente y en su día firmando al acabar</template>
+</category>
+
+<!-- Regla 17_1 -->
+<category>
+<pattern>^ asistencia * actividades de evaluacion ^</pattern>
+<template><srai>^ Como puedo justificar mi asistencia a las actividades de evaluacion y a sus revisiones ^</srai></template>
+</category>
+
+<!-- Regla 17_2 -->
+<category>
+<pattern>^ asistencia * revisiones ^</pattern>
+<template><srai>^ Como puedo justificar mi asistencia a las actividades de evaluacion y a sus revisiones ^</srai></template>
+</category>
+
+<!-- Regla 18 -->
+<category>
+<pattern>^ Que actividades deportivas ofrece la <set>esei</set> ^</pattern>
+<template>Actividades dirigidas,escuelas deportivas,rutas culturales,
+campeonatos y deporte federado </template>
+</category>
+
+<!-- Regla 18_0 si no está en el set -->
+<category>
+<pattern>^ Que actividades deportivas ofrece la *</pattern>
+<template>No se que actividades deportivas ofrece la <star index="2"/>. </template>
+</category>
+
+<!-- Regla 18_1 -->
+<category>
+<pattern>^ actividades deportivas ^ <set>esei</set> ^ </pattern>
+<template>Actividades dirigidas,escuelas deportivas,rutas culturales,
+campeonatos y deporte federado</template>
+</category>
+
+
+</aiml>
